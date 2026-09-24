@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>NEON GRID — Arcade Bullet-Hell</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui=true">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: #05070f;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #GameDiv, #Cocos3dGameContainer, #GameCanvas {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="GameDiv" cc_exact_fit_screen="true">
+    <div id="Cocos3dGameContainer">
+      <canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="99"></canvas>
+    </div>
+  </div>
+  <script>
+    window.innerWidth = window.innerWidth || document.documentElement.clientWidth;
+    window.innerHeight = window.innerHeight || document.documentElement.clientHeight;
+    window.tt = window.tt || {
+      getSystemInfoSync: () => ({
+        windowWidth: window.innerWidth,
+        windowHeight: window.innerHeight,
+        screenWidth: window.innerWidth,
+        screenHeight: window.innerHeight,
+        pixelRatio: window.devicePixelRatio || 1
+      }),
+      setStorageSync: (k, v) => { try { localStorage.setItem(k, v); } catch(e){} },
+      getStorageSync: (k) => { try { return localStorage.getItem(k); } catch(e){ return null; } },
+      login: (obj) => { if (obj && obj.success) obj.success({}); },
+      getUserInfo: (obj) => { if (obj && obj.success) obj.success({ userInfo: { nickName: 'Player', avatarUrl: '' } }); },
+      onShow: (cb) => {},
+      onHide: (cb) => {},
+      onError: (cb) => {},
+      loadSubpackage: (obj) => { if (obj && obj.success) obj.success(); },
+      createRewardedVideoAd: (cfg) => ({
+        load: () => Promise.resolve(),
+        show: () => Promise.resolve(),
+        onError: (cb) => {},
+        onClose: (cb) => {}
+      }),
+      shareAppMessage: (cfg) => { if(cfg && cfg.success) cfg.success(); }
+    };
+  </script>
+  <script src="game.js"></script>
+</body>
+</html>

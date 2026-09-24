@@ -20,7 +20,7 @@ All games are free and playable in the browser (opens in a new tab):
 | Game             | Genre            | Play (GitHub Pages)                                        | TikTok Mini |
 | ---------------- | ---------------- | ---------------------------------------------------------- | ----------- |
 | **One More Tap** | Reflex arcade    | https://burnekboi.github.io/one-more-tap-web/              | Yes         |
-| **NEON GRID**    | Bullet-hell      | https://burnekboi.github.io/neon-grid-web/                 | Yes         |
+| **NEON GRID**    | Bullet-hell      | https://burnekboi.github.io/KGarcade/neon-grid/            | Yes         |
 | **Dungeon Knights** | Action RPG/crawler | https://burnekboi.github.io/dungeon-knights-web/         | Yes         |
 
 Site + game repos:
@@ -28,7 +28,8 @@ Site + game repos:
 ```
 Burnekboi/one-more-tap-landing   <- this site
 Burnekboi/one-more-tap-web       <- One More Tap web build
-Burnekboi/neon-grid-web          <- NEON GRID web build
+Burnekboi/neon-grid-web          <- NEON GRID web build (standalone)
+Burnekboi/KGarcade               <- site + playable mirror at /KGarcade/neon-grid/
 Burnekboi/dungeon-knights-web    <- Dungeon Knights web build
 ```
 
@@ -45,6 +46,7 @@ Burnekboi/dungeon-knights-web    <- Dungeon Knights web build
 "C:\ProgramData\cocos\editors\Creator\3.8.8\CocosCreator.exe" --project "<game folder>" --build "platform=web-mobile;debug=false"
 ```
 Copy `build/web-mobile/*` into the `neon-grid-web` repo, commit, push. Pages re-deploys.
+To also host the playable mirror on this site, copy the same build into the `neon-grid/` folder of this repo and push both.
 
 **Dungeon Knights (Vite + React):**
 ```
